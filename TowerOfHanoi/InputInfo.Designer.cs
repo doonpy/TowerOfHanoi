@@ -36,7 +36,7 @@
             // tbName
             // 
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(97, 88);
+            this.tbName.Location = new System.Drawing.Point(124, 88);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(275, 34);
             this.tbName.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             // btSubmit
             // 
-            this.btSubmit.Location = new System.Drawing.Point(179, 152);
+            this.btSubmit.Location = new System.Drawing.Point(209, 151);
             this.btSubmit.Name = "btSubmit";
             this.btSubmit.Size = new System.Drawing.Size(105, 45);
             this.btSubmit.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 222);
+            this.ClientSize = new System.Drawing.Size(508, 222);
             this.Controls.Add(this.btSubmit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbName);

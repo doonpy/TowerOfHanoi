@@ -153,7 +153,7 @@ namespace TowerOfHanoi
             rtbLog.Text = "Đồ án 1 - Poon & Thanh Tuấn\n" +"==== TOP 10 BẢNG VÀNG ====\n" + "   Tên     Level Time";
             System.IO.StreamReader sr = new System.IO.StreamReader("test.txt", true);
             for (int i = 0; i < 10; i++)
-                rtbLog.Text = rtbLog.Text + Environment.NewLine + i + ". " + sr.ReadLine();
+                rtbLog.Text = rtbLog.Text + Environment.NewLine + i+1 + ". " + sr.ReadLine();
         }
 
         private void btnGiveUp_Click(object sender, EventArgs e)
