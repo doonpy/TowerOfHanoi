@@ -41,7 +41,6 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAuto = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRank = new System.Windows.Forms.ToolStripButton();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblMoveCount = new System.Windows.Forms.Label();
             this.nubLevel = new System.Windows.Forms.NumericUpDown();
@@ -64,6 +63,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tmrAnimation = new System.Windows.Forms.Timer(this.components);
             this.rtbLog = new System.Windows.Forms.RichTextBox();
+            this.numUpDownLV = new System.Windows.Forms.NumericUpDown();
+            this.btnRank = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nubLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTowerC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTowerB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTowerA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownLV)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -93,8 +95,7 @@
             this.btnExit,
             this.toolStripSeparator5,
             this.btnAuto,
-            this.toolStripSeparator6,
-            this.btnRank});
+            this.toolStripSeparator6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1468, 37);
@@ -193,28 +194,16 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 37);
             // 
-            // btnRank
-            // 
-            this.btnRank.BackColor = System.Drawing.Color.Fuchsia;
-            this.btnRank.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnRank.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRank.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRank.Name = "btnRank";
-            this.btnRank.Size = new System.Drawing.Size(48, 34);
-            this.btnRank.Text = "Rank";
-            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
-            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.Fuchsia;
-            this.lblTime.Location = new System.Drawing.Point(476, 54);
+            this.lblTime.Location = new System.Drawing.Point(13, 54);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(213, 27);
+            this.lblTime.Size = new System.Drawing.Size(211, 25);
             this.lblTime.TabIndex = 15;
             this.lblTime.Text = "Thời Gian: 00:00:00 ";
             // 
@@ -222,13 +211,12 @@
             // 
             this.lblMoveCount.AutoSize = true;
             this.lblMoveCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblMoveCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMoveCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoveCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblMoveCount.Location = new System.Drawing.Point(452, 81);
+            this.lblMoveCount.Location = new System.Drawing.Point(13, 81);
             this.lblMoveCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMoveCount.Name = "lblMoveCount";
-            this.lblMoveCount.Size = new System.Drawing.Size(256, 27);
+            this.lblMoveCount.Size = new System.Drawing.Size(254, 25);
             this.lblMoveCount.TabIndex = 16;
             this.lblMoveCount.Text = "Số Lần Di Chuyển: 0 lần ";
             // 
@@ -237,7 +225,7 @@
             this.nubLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nubLevel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.nubLevel.InterceptArrowKeys = false;
-            this.nubLevel.Location = new System.Drawing.Point(517, 113);
+            this.nubLevel.Location = new System.Drawing.Point(97, 113);
             this.nubLevel.Margin = new System.Windows.Forms.Padding(4);
             this.nubLevel.Maximum = new decimal(new int[] {
             8,
@@ -263,12 +251,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(415, 113);
+            this.label6.Location = new System.Drawing.Point(13, 113);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 29);
+            this.label6.Size = new System.Drawing.Size(76, 24);
             this.label6.TabIndex = 18;
             this.label6.Text = "Số đĩa:";
             // 
@@ -440,12 +428,12 @@
             // 
             this.lblLeast.AutoSize = true;
             this.lblLeast.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeast.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLeast.ForeColor = System.Drawing.Color.Red;
-            this.lblLeast.Location = new System.Drawing.Point(585, 112);
+            this.lblLeast.Location = new System.Drawing.Point(162, 115);
             this.lblLeast.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLeast.Name = "lblLeast";
-            this.lblLeast.Size = new System.Drawing.Size(274, 25);
+            this.lblLeast.Size = new System.Drawing.Size(231, 20);
             this.lblLeast.TabIndex = 19;
             this.lblLeast.Text = "(Số Lần Di Chuyển Tối Thiểu)";
             // 
@@ -499,12 +487,55 @@
             this.rtbLog.TabIndex = 23;
             this.rtbLog.Text = "Đồ án 1 - Poon & Thanh Tuấn";
             // 
+            // numUpDownLV
+            // 
+            this.numUpDownLV.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.numUpDownLV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUpDownLV.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.numUpDownLV.InterceptArrowKeys = false;
+            this.numUpDownLV.Location = new System.Drawing.Point(1049, 58);
+            this.numUpDownLV.Margin = new System.Windows.Forms.Padding(4);
+            this.numUpDownLV.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numUpDownLV.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numUpDownLV.Name = "numUpDownLV";
+            this.numUpDownLV.ReadOnly = true;
+            this.numUpDownLV.Size = new System.Drawing.Size(48, 30);
+            this.numUpDownLV.TabIndex = 24;
+            this.numUpDownLV.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // btnRank
+            // 
+            this.btnRank.BackColor = System.Drawing.Color.Red;
+            this.btnRank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRank.Location = new System.Drawing.Point(927, 54);
+            this.btnRank.Name = "btnRank";
+            this.btnRank.Size = new System.Drawing.Size(115, 38);
+            this.btnRank.TabIndex = 25;
+            this.btnRank.Text = "Rank Lv:";
+            this.btnRank.UseVisualStyleBackColor = false;
+            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
+            // 
             // FrmTHN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(235)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1468, 587);
+            this.Controls.Add(this.btnRank);
+            this.Controls.Add(this.numUpDownLV);
             this.Controls.Add(this.rtbLog);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -547,6 +578,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTowerC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTowerB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTowerA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownLV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,7 +619,8 @@
         private System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton btnRank;
+        private System.Windows.Forms.NumericUpDown numUpDownLV;
+        private System.Windows.Forms.Button btnRank;
     }
 }
 

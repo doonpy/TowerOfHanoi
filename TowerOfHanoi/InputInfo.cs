@@ -30,32 +30,45 @@ namespace TowerOfHanoi
         private void btSubmit_Click(object sender, EventArgs e)
         {
             name = tbName.Text;
-            logRankInput(name);
+            rankInput(name);
             this.Close();
         }
 
-        private void logRankInput(string name)
+        private void rankInput(string name)
         {
             try
             {
+                int spaceNum = 10;
+                string fileName = "test.txt";
+                string nameProcessed = name;
+                for (int i = 0; i < spaceNum - name.Length; i++)
+                    nameProcessed = nameProcessed + '_';
                 ranks = new List<Rank>();
-                StreamReader sr = new StreamReader("test.txt", Encoding.Unicode);
-                if (sr.ReadToEnd() == null)
+                FileStream fs;
+                if (!File.Exists(fileName))
                 {
-                    StreamWriter sw = new StreamWriter("test.txt", true);
-                    sw.WriteLine(name + "    " + FrmTHN.level + "    " + FrmTHN.time);
-                    sw.Close();
+                    fs = new FileStream(fileName, FileMode.Create);
+                    fs.Close();
+                }
+                StreamReader sr = new StreamReader(fileName,true);
+                if (sr.ReadToEnd() == "")
+                {
                     sr.Close();
+                    StreamWriter sw = new StreamWriter(fileName, true);
+                    sw.WriteLine(nameProcessed + '_' + FrmTHN.level + "_______" + FrmTHN.time);
+                    sw.Close();            
                     return;
                 }
                 sr.Close();
-                StreamReader sr2 = new StreamReader("test.txt", true);
-                string str;
+                StreamReader sr2 = new StreamReader(fileName, true);
+                string str; 
                 while ((str = sr2.ReadLine()) != null)
                 {
                     Rank temp = new Rank();
-                    temp.name = str.Substring(0, str.IndexOf(' '));
-                    temp.lv = Int32.Parse(str.Substring(temp.name.Length + 4, 1));
+                    temp.name = str.Substring(0, str.IndexOf('_'));
+                    for (int i = 0; i < spaceNum - str.Substring(0, str.IndexOf('_')).Length; i++)
+                        temp.name = temp.name + '_';
+                    temp.lv = Int32.Parse(str.Substring(temp.name.Length + 1, 1));
                     int h = Int32.Parse(str.Substring(str.Length - 8, 2));
                     int m = Int32.Parse(str.Substring(str.Length - 5, 2));
                     int s = Int32.Parse(str.Substring(str.Length - 2, 2));
@@ -64,7 +77,7 @@ namespace TowerOfHanoi
 
                 }
                 Rank newrank = new Rank();
-                newrank.name = name;
+                newrank.name = nameProcessed;
                 newrank.lv = FrmTHN.level;
                 newrank.time = FrmTHN.time;
                 ranks.Add(newrank);
@@ -83,9 +96,9 @@ namespace TowerOfHanoi
                     SwapRank(ranks, i, smallest);
                 }
                 sr2.Close();
-                StreamWriter sw2 = new StreamWriter("test.txt");                
+                StreamWriter sw2 = new StreamWriter(fileName);                
                 foreach (Rank rank in ranks)
-                    sw2.WriteLine(rank.name + "    " + rank.lv + "    " + rank.time);
+                    sw2.WriteLine(rank.name + '_' + rank.lv + "_______" + rank.time);
                 sw2.Close();
             }
             catch (FileLoadException)
