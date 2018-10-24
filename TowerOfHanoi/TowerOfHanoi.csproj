@@ -79,6 +79,9 @@
     <EmbeddedResource Include="FrmGiaoDien.resx">
       <DependentUpon>FrmGiaoDien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTHN.aa-DJ.resx">
+      <DependentUpon>FrmTHN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTHN.resx">
       <DependentUpon>FrmTHN.cs</DependentUpon>
     </EmbeddedResource>

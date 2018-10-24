@@ -69,6 +69,7 @@
             this.Controls.Add(this.btSubmit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInputInfo";
             this.Text = "Thông báo";
             this.ResumeLayout(false);

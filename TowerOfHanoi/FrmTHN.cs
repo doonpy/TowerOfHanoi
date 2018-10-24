@@ -88,7 +88,7 @@ namespace TowerOfHanoi
         {
 
             time = time.Add(new TimeSpan(0, 0, 1)); // time sẽ bằng chính nó + thêm 1 lượng tgian là 1 giây
-            lblTime.Text = string.Format("Thời gian: {0:00}:{1:00}:{2:00}", // label hiển thị thời gian định dạng nó thành string
+            lblTime.Text = string.Format("Time: {0:00}:{1:00}:{2:00}", // label hiển thị thời gian định dạng nó thành string
                                             time.Hours, time.Minutes, time.Seconds);//0,1,2 là thứ tự - 00 là hiển thị khi chạy chương trình
 
         }
@@ -150,21 +150,20 @@ namespace TowerOfHanoi
 
         private void btnRank_Click(object sender, EventArgs e)
         {
-            rtbLog.Text = "Đồ án 1 - Poon & Thanh Tuấn\n" +"====== TOP 10 BẢNG VÀNG ======\n" + "    Tên             Level        Time";
+            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========== TOP 10 RANK ==========\n" + "   Tên         Level    Time";
             System.IO.StreamReader sr = new System.IO.StreamReader("test.txt", true);
             for (int i = 0, j = 1; i < 10; i++)
             {
                 
                 string s = sr.ReadLine();
                 if (s == null) return;
-                string temp = s.Substring(0, s.IndexOf('_'));
-                if (Int32.Parse(s.Substring(temp.Length + (10 - temp.Length) + 1, 1)) != numUpDownLV.Value)
+                string temp = s.Substring(0, s.IndexOf(' '));
+                if (Int32.Parse(s.Substring(temp.Length + (frmInputInfo.spaceNum - temp.Length) + 1, 1)) != numUpDownLV.Value)
                     continue;
                 rtbLog.Text = rtbLog.Text + Environment.NewLine+ j + ". " + s;
                 j++;
             }
         }
-
 
         private void btnGiveUp_Click(object sender, EventArgs e)
         {
@@ -189,7 +188,8 @@ namespace TowerOfHanoi
                                  // -> Để người dùng có thể bắt đầu chơi lại 1 game mới
             tmrAnimation.Enabled = false;
             btnAuto.Enabled = true;
-            rtbLog.Text = "Đồ án 1 - Poon & Thanh Tuấn";
+            rtbLog.Text =
+            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========\n";
             foreach (PictureBox disk in disks)
             {
 
@@ -198,8 +198,8 @@ namespace TowerOfHanoi
             }
 
             time = new TimeSpan(0); // làm mới lại thời gian bắt đầu từ 0
-            lblTime.Text = "Thời Gian: 00:00:00";
-            lblMoveCount.Text = "Số Lần Di Chuyển: 0 lần";
+            lblTime.Text = "Move: 00:00:00";
+            lblMoveCount.Text = "Move: 0";
             moveCount = 0;// reset số lần đã di chuyển về 0 -> chưa di chuyển lần nào
             
 
@@ -239,34 +239,30 @@ namespace TowerOfHanoi
 
             }
 
-            if (nubLevel.Value == 2)
-
-                lblLeast.Text = "(Tối Thiểu 3 Lần)";
-
-            if (nubLevel.Value == 3)
-
-                lblLeast.Text = "(Tối Thiểu 7 Lần)";
-
-            if (nubLevel.Value == 4)
-
-                lblLeast.Text = "(Tối Thiểu 15 Lần)";
-
-            if (nubLevel.Value == 5)
-
-                lblLeast.Text = "(Tối Thiểu 31 Lần)";
-
-            if (nubLevel.Value == 6)
-
-                lblLeast.Text = "(Tối Thiểu 63 Lần)";
-
-            if (nubLevel.Value == 7)
-
-                lblLeast.Text = "(Tối Thiểu 127 Lần)";
-
-            if (nubLevel.Value == 8)
-
-                lblLeast.Text = "(Tối Thiểu 255 Lần)";
-
+            switch (nubLevel.Value)
+            {
+                case 2:
+                    lblLeast.Text = "(Minimize in 3 steps)";
+                    break;
+                case 3:
+                    lblLeast.Text = "(Minimize in 7 steps)";
+                    break;
+                case 4:
+                    lblLeast.Text = "(Minimize in 15 steps)";
+                    break;
+                case 5:
+                    lblLeast.Text = "(Minimize in 31 steps)";
+                    break;
+                case 6:
+                    lblLeast.Text = "(Minimize in 63 steps)";
+                    break;
+                case 7:
+                    lblLeast.Text = "(Minimize in 127 steps)";
+                    break;
+                default:
+                    lblLeast.Text = "(Minimize in 255 steps)";
+                    break;
+            }
             tmrCountTime.Start(); // Cho chạy timer 
 
         }

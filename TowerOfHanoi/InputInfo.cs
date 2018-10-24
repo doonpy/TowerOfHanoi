@@ -14,6 +14,7 @@ namespace TowerOfHanoi
     public partial class frmInputInfo : Form
     {
         public static string name;
+        public static int spaceNum = 12;
         List<Rank> ranks = new List<Rank>();
         public struct Rank
         {
@@ -38,11 +39,10 @@ namespace TowerOfHanoi
         {
             try
             {
-                int spaceNum = 10;
                 string fileName = "test.txt";
                 string nameProcessed = name;
                 for (int i = 0; i < spaceNum - name.Length; i++)
-                    nameProcessed = nameProcessed + '_';
+                    nameProcessed = nameProcessed + ' ';
                 ranks = new List<Rank>();
                 FileStream fs;
                 if (!File.Exists(fileName))
@@ -55,7 +55,7 @@ namespace TowerOfHanoi
                 {
                     sr.Close();
                     StreamWriter sw = new StreamWriter(fileName, true);
-                    sw.WriteLine(nameProcessed + '_' + FrmTHN.level + "_______" + FrmTHN.time);
+                    sw.WriteLine(nameProcessed + ' ' + FrmTHN.level + "       " + FrmTHN.time);
                     sw.Close();            
                     return;
                 }
@@ -65,9 +65,9 @@ namespace TowerOfHanoi
                 while ((str = sr2.ReadLine()) != null)
                 {
                     Rank temp = new Rank();
-                    temp.name = str.Substring(0, str.IndexOf('_'));
-                    for (int i = 0; i < spaceNum - str.Substring(0, str.IndexOf('_')).Length; i++)
-                        temp.name = temp.name + '_';
+                    temp.name = str.Substring(0, str.IndexOf(' '));
+                    for (int i = 0; i < spaceNum - str.Substring(0, str.IndexOf(' ')).Length; i++)
+                        temp.name = temp.name + ' ';
                     temp.lv = Int32.Parse(str.Substring(temp.name.Length + 1, 1));
                     int h = Int32.Parse(str.Substring(str.Length - 8, 2));
                     int m = Int32.Parse(str.Substring(str.Length - 5, 2));
@@ -98,7 +98,7 @@ namespace TowerOfHanoi
                 sr2.Close();
                 StreamWriter sw2 = new StreamWriter(fileName);                
                 foreach (Rank rank in ranks)
-                    sw2.WriteLine(rank.name + '_' + rank.lv + "_______" + rank.time);
+                    sw2.WriteLine(rank.name + ' ' + rank.lv + "       " + rank.time);
                 sw2.Close();
             }
             catch (FileLoadException)
