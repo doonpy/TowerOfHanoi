@@ -37,9 +37,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRule = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnExit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAuto = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblMoveCount = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             // toolStrip1
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.BackColor = System.Drawing.Color.Silver;
+            this.toolStrip1.BackColor = System.Drawing.Color.Teal;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPlay,
@@ -102,7 +102,7 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnPlay.BackColor = System.Drawing.Color.Aqua;
             this.btnPlay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             resources.ApplyResources(this.btnPlay, "btnPlay");
             this.btnPlay.ForeColor = System.Drawing.Color.Black;
@@ -119,7 +119,7 @@
             // btnGiveUp
             // 
             resources.ApplyResources(this.btnGiveUp, "btnGiveUp");
-            this.btnGiveUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnGiveUp.BackColor = System.Drawing.Color.Aqua;
             this.btnGiveUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnGiveUp.ForeColor = System.Drawing.Color.Black;
             this.btnGiveUp.Name = "btnGiveUp";
@@ -135,7 +135,7 @@
             // btnRule
             // 
             resources.ApplyResources(this.btnRule, "btnRule");
-            this.btnRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRule.BackColor = System.Drawing.Color.Aqua;
             this.btnRule.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnRule.ForeColor = System.Drawing.Color.Black;
             this.btnRule.Name = "btnRule";
@@ -146,27 +146,27 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
-            // btnExit
+            // btnAuto
             // 
-            resources.ApplyResources(this.btnExit, "btnExit");
-            this.btnExit.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            resources.ApplyResources(this.btnAuto, "btnAuto");
+            this.btnAuto.BackColor = System.Drawing.Color.Aqua;
+            this.btnAuto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnAuto.Name = "btnAuto";
+            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
-            // btnAuto
+            // btnExit
             // 
-            resources.ApplyResources(this.btnAuto, "btnAuto");
-            this.btnAuto.BackColor = System.Drawing.Color.Yellow;
-            this.btnAuto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
+            resources.ApplyResources(this.btnExit, "btnExit");
+            this.btnExit.BackColor = System.Drawing.Color.Red;
+            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // toolStripSeparator6
             // 
@@ -177,19 +177,23 @@
             // 
             resources.ApplyResources(this.lblTime, "lblTime");
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.ForeColor = System.Drawing.Color.Fuchsia;
+            this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTime.ForeColor = System.Drawing.Color.Teal;
             this.lblTime.Name = "lblTime";
             // 
             // lblMoveCount
             // 
             resources.ApplyResources(this.lblMoveCount, "lblMoveCount");
             this.lblMoveCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblMoveCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblMoveCount.ForeColor = System.Drawing.Color.Teal;
             this.lblMoveCount.Name = "lblMoveCount";
             // 
             // nubLevel
             // 
+            this.nubLevel.BackColor = System.Drawing.Color.Aqua;
+            this.nubLevel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.nubLevel, "nubLevel");
+            this.nubLevel.ForeColor = System.Drawing.Color.Teal;
             this.nubLevel.InterceptArrowKeys = false;
             this.nubLevel.Maximum = new decimal(new int[] {
             8,
@@ -213,7 +217,7 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label6.ForeColor = System.Drawing.Color.Teal;
             this.label6.Name = "label6";
             // 
             // tmrCountTime
@@ -321,7 +325,7 @@
             // 
             resources.ApplyResources(this.lblLeast, "lblLeast");
             this.lblLeast.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeast.ForeColor = System.Drawing.Color.Red;
+            this.lblLeast.ForeColor = System.Drawing.Color.Teal;
             this.lblLeast.Name = "lblLeast";
             // 
             // label1
@@ -346,15 +350,18 @@
             // 
             // rtbLog
             // 
-            this.rtbLog.BackColor = System.Drawing.Color.White;
+            this.rtbLog.BackColor = System.Drawing.Color.Aqua;
             resources.ApplyResources(this.rtbLog, "rtbLog");
+            this.rtbLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
             // 
             // numUpDownLV
             // 
-            this.numUpDownLV.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.numUpDownLV.BackColor = System.Drawing.Color.Aqua;
+            this.numUpDownLV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.numUpDownLV, "numUpDownLV");
+            this.numUpDownLV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.numUpDownLV.InterceptArrowKeys = false;
             this.numUpDownLV.Maximum = new decimal(new int[] {
             8,
@@ -376,8 +383,10 @@
             // 
             // btnRank
             // 
-            this.btnRank.BackColor = System.Drawing.Color.Red;
+            this.btnRank.BackColor = System.Drawing.Color.Aqua;
+            this.btnRank.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnRank, "btnRank");
+            this.btnRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRank.Name = "btnRank";
             this.btnRank.UseVisualStyleBackColor = false;
             this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
@@ -385,8 +394,8 @@
             // FrmTHN
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(235)))), ((int)(((byte)(238)))));
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.btnRank);
             this.Controls.Add(this.numUpDownLV);
             this.Controls.Add(this.rtbLog);

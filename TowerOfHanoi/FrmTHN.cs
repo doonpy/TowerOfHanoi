@@ -88,7 +88,7 @@ namespace TowerOfHanoi
         {
 
             time = time.Add(new TimeSpan(0, 0, 1)); // time sẽ bằng chính nó + thêm 1 lượng tgian là 1 giây
-            lblTime.Text = string.Format("Time: {0:00}:{1:00}:{2:00}", // label hiển thị thời gian định dạng nó thành string
+            lblTime.Text = string.Format("{0:00}:{1:00}:{2:00}", // label hiển thị thời gian định dạng nó thành string
                                             time.Hours, time.Minutes, time.Seconds);//0,1,2 là thứ tự - 00 là hiển thị khi chạy chương trình
 
         }
@@ -137,7 +137,7 @@ namespace TowerOfHanoi
         private void btnAuto_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            if(rtbLog.Text != "Đồ án 1 - Poon & Thanh Tuấn")
+            if(rtbLog.Text != "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========")
             {
                 MessageBox.Show("Phải dùng Auto ban đầu bạn ei!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnAuto.Enabled = false;
@@ -189,7 +189,7 @@ namespace TowerOfHanoi
             tmrAnimation.Enabled = false;
             btnAuto.Enabled = true;
             rtbLog.Text =
-            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========\n";
+            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========";
             foreach (PictureBox disk in disks)
             {
 
@@ -284,7 +284,7 @@ namespace TowerOfHanoi
 
                 //Khi nào cọc nhấn vào có đĩa thì nó mới đánh dấu đó là cái cọc hợp lệ và đánh dấu FirstClickedDisks
                 FirstClickedDisks = DisksOfClickedTower;// Cập nhật cái tập đĩa được đầu tiên = tập những cái đĩa được nhấn 
-                towerA = ClickedTower.Name.ToString() == "picTowerA" ? "Tháp A" : ClickedTower.ToString() == "picTowerB" ? "Tháp B" : "Tháp C";
+                towerA = ClickedTower.Name.ToString() == "picTowerA" ? "Tower A" : ClickedTower.ToString() == "picTowerB" ? "Tower B" : "Tower C";
                 ClickedTower.BorderStyle = BorderStyle.FixedSingle;//Có đường biên để biết cọc nào được nhấn
             }
 
@@ -299,7 +299,7 @@ namespace TowerOfHanoi
 
                 }
                 SecondClickedDisks = DisksOfClickedTower;//Đánh dấu những cái đĩa được nhấn lần 2 = tập những cái đĩa được nhấn 
-                towerB = ClickedTower.Name.ToString() == "picTowerA" ? "Tháp A" : ClickedTower.ToString() == "picTowerB" ? "Tháp B" : "Tháp C";
+                towerB = ClickedTower.Name.ToString() == "picTowerA" ? "Tower A" : ClickedTower.ToString() == "picTowerB" ? "Tower B" : "Tower C";
                 ProcessMovingDisk(ClickedTower);//Tách ra 1 phương thức xử lí -> Xử lí di chuyển đĩa ntn khi đã được đánh dấu 2 tập đĩa 
             }
 
@@ -345,7 +345,7 @@ namespace TowerOfHanoi
             SecondClickedDisks.Push(FirstTopDisk);//Bỏ đĩa được chọn lên đầu của tập ở lần chọn thứ 2
 
             ++moveCount;//Mỗi lần di chuyển thành công -> tăng movecount
-            lblMoveCount.Text = string.Format("Số Lần Di Chuyển: {0} lần ", moveCount);//Và cập nhật lại label movecount ,bỏ movecount vô
+            lblMoveCount.Text = string.Format("Move: {0}", moveCount);//Và cập nhật lại label movecount ,bỏ movecount vô
             FirstClickedDisks = SecondClickedDisks = null;//reset 2 tập đĩa được nhấn 
             picTowerA.BorderStyle = picTowerB.BorderStyle = picTowerC.BorderStyle = BorderStyle.None;//Vì k biết đường biên của lần chọn là cọc nào nên tắt cả 3 cọc          
             rtbLog.Text = rtbLog.Text + Environment.NewLine + moveCount + ". " + towerA + " --> " + towerB; //thêm vào log
@@ -356,7 +356,7 @@ namespace TowerOfHanoi
                 nubLevel.Enabled = true;
                 btnGiveUp.Enabled = false;
                 btnPlay.Enabled = true;
-                MessageBox.Show("Chúc mừng bạn đã hoàn thành trò chơi ", "Congratulation",MessageBoxButtons.OK);
+                MessageBox.Show("You have completed the challenge!\nYou are genuis!", "Congratulation",MessageBoxButtons.OK);
                 frmInputInfo frm = new frmInputInfo();
                 frm.ShowDialog();
             }

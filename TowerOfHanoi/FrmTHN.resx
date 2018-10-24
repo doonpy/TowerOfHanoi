@@ -132,7 +132,7 @@
     <value>White</value>
   </data>
   <data name="btnPlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 39</value>
+    <value>40, 39</value>
   </data>
   <data name="btnPlay.Text" xml:space="preserve">
     <value>PLAY</value>
@@ -216,7 +216,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1468, 42</value>
+    <value>1174, 42</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -240,23 +240,22 @@
     <value>True</value>
   </data>
   <data name="lblTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt</value>
+    <value>Century Gothic, 48pt, style=Bold</value>
   </data>
   <data name="lblTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 49</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>880, 43</value>
   </data>
   <data name="lblTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 23</value>
+    <value>285, 77</value>
   </data>
   <data name="lblTime.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="lblTime.Text" xml:space="preserve">
-    <value>Time: 00:00:00 </value>
+    <value>00:00:00</value>
+  </data>
+  <data name="lblTime.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;lblTime.Name" xml:space="preserve">
     <value>lblTime</value>
@@ -274,16 +273,13 @@
     <value>True</value>
   </data>
   <data name="lblMoveCount.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt</value>
+    <value>Century Gothic, 15.75pt</value>
   </data>
   <data name="lblMoveCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 76</value>
-  </data>
-  <data name="lblMoveCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>12, 80</value>
   </data>
   <data name="lblMoveCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
+    <value>133, 24</value>
   </data>
   <data name="lblMoveCount.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -304,22 +300,23 @@
     <value>9</value>
   </data>
   <data name="nubLevel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+    <value>Century Gothic, 15.75pt</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nubLevel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="nubLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 109</value>
-  </data>
-  <data name="nubLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>89, 48</value>
   </data>
   <data name="nubLevel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 26</value>
+    <value>48, 29</value>
   </data>
   <data name="nubLevel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="nubLevel.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;nubLevel.Name" xml:space="preserve">
     <value>nubLevel</value>
@@ -337,16 +334,13 @@
     <value>True</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt</value>
+    <value>Century Gothic, 15.75pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 108</value>
-  </data>
-  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>12, 53</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 23</value>
+    <value>71, 24</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -377,13 +371,10 @@
 </value>
   </data>
   <data name="pic3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 284</value>
-  </data>
-  <data name="pic3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>620, 227</value>
   </data>
   <data name="pic3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -415,13 +406,10 @@
 </value>
   </data>
   <data name="pic4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 329</value>
-  </data>
-  <data name="pic4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>620, 263</value>
   </data>
   <data name="pic4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -453,13 +441,10 @@
 </value>
   </data>
   <data name="pic5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 373</value>
-  </data>
-  <data name="pic5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>620, 298</value>
   </data>
   <data name="pic5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic5.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -491,13 +476,10 @@
 </value>
   </data>
   <data name="pic6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 417</value>
-  </data>
-  <data name="pic6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>620, 334</value>
   </data>
   <data name="pic6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic6.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -529,13 +511,10 @@
 </value>
   </data>
   <data name="pic7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 462</value>
-  </data>
-  <data name="pic7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>620, 370</value>
   </data>
   <data name="pic7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic7.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -567,13 +546,10 @@
 </value>
   </data>
   <data name="pic8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>775, 506</value>
-  </data>
-  <data name="pic8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>620, 405</value>
   </data>
   <data name="pic8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic8.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -604,13 +580,10 @@
 </value>
   </data>
   <data name="pic2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>452, 506</value>
-  </data>
-  <data name="pic2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>362, 405</value>
   </data>
   <data name="pic2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -641,13 +614,10 @@
 </value>
   </data>
   <data name="pic1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 506</value>
-  </data>
-  <data name="pic1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>102, 405</value>
   </data>
   <data name="pic1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 37</value>
+    <value>228, 30</value>
   </data>
   <data name="pic1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -761,13 +731,10 @@
 </value>
   </data>
   <data name="picTowerC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>759, 196</value>
-  </data>
-  <data name="picTowerC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>607, 157</value>
   </data>
   <data name="picTowerC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 377</value>
+    <value>252, 302</value>
   </data>
   <data name="picTowerC.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -878,13 +845,10 @@
 </value>
   </data>
   <data name="picTowerB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>436, 196</value>
-  </data>
-  <data name="picTowerB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>349, 157</value>
   </data>
   <data name="picTowerB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 377</value>
+    <value>252, 302</value>
   </data>
   <data name="picTowerB.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -995,13 +959,10 @@
 </value>
   </data>
   <data name="picTowerA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 196</value>
-  </data>
-  <data name="picTowerA.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>90, 157</value>
   </data>
   <data name="picTowerA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 377</value>
+    <value>252, 302</value>
   </data>
   <data name="picTowerA.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -1025,16 +986,13 @@
     <value>True</value>
   </data>
   <data name="lblLeast.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt</value>
+    <value>Century Gothic, 15.75pt</value>
   </data>
   <data name="lblLeast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 108</value>
-  </data>
-  <data name="lblLeast.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>143, 53</value>
   </data>
   <data name="lblLeast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 23</value>
+    <value>178, 24</value>
   </data>
   <data name="lblLeast.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1061,13 +1019,10 @@
     <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 160</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>204, 128</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 31</value>
+    <value>28, 26</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1094,13 +1049,10 @@
     <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>576, 160</value>
-  </data>
-  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>461, 128</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 31</value>
+    <value>28, 26</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -1127,13 +1079,10 @@
     <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>899, 160</value>
-  </data>
-  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>719, 128</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 31</value>
+    <value>29, 26</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1160,19 +1109,16 @@
     <value>Courier New, 10.8pt, style=Bold</value>
   </data>
   <data name="rtbLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1111, 108</value>
-  </data>
-  <data name="rtbLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>889, 157</value>
   </data>
   <data name="rtbLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 463</value>
+    <value>276, 300</value>
   </data>
   <data name="rtbLog.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="rtbLog.Text" xml:space="preserve">
-    <value>Đồ án 1 - Poon &amp; Thanh Tuấn</value>
+    <value>Project 1 - Poon &amp; Thanh Tuan</value>
   </data>
   <data name="&gt;&gt;rtbLog.Name" xml:space="preserve">
     <value>rtbLog</value>
@@ -1187,22 +1133,22 @@
     <value>2</value>
   </data>
   <data name="numUpDownLV.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Century Gothic, 15.75pt</value>
   </data>
   <data name="numUpDownLV.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="numUpDownLV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1407, 70</value>
-  </data>
-  <data name="numUpDownLV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>1127, 122</value>
   </data>
   <data name="numUpDownLV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 30</value>
+    <value>38, 29</value>
   </data>
   <data name="numUpDownLV.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
+  </data>
+  <data name="numUpDownLV.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;numUpDownLV.Name" xml:space="preserve">
     <value>numUpDownLV</value>
@@ -1220,13 +1166,16 @@
     <value>Flat</value>
   </data>
   <data name="btnRank.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold</value>
+    <value>Century Gothic, 14.25pt, style=Bold</value>
   </data>
   <data name="btnRank.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1285, 65</value>
+    <value>1020, 122</value>
+  </data>
+  <data name="btnRank.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnRank.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 38</value>
+    <value>100, 30</value>
   </data>
   <data name="btnRank.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1256,13 +1205,13 @@
     <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>120, 120</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1468, 587</value>
+    <value>1174, 470</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3356,9 +3305,6 @@
         MTMtMDItMTRUMDA6NDQ6NTEtMDY6MDCx6KHvAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -3401,10 +3347,10 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
-    <value>btnExit</value>
+  <data name="&gt;&gt;btnAuto.Name" xml:space="preserve">
+    <value>btnAuto</value>
   </data>
-  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnAuto.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
@@ -3413,10 +3359,10 @@
   <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAuto.Name" xml:space="preserve">
-    <value>btnAuto</value>
+  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
+    <value>btnExit</value>
   </data>
-  <data name="&gt;&gt;btnAuto.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">

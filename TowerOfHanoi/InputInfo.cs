@@ -30,6 +30,11 @@ namespace TowerOfHanoi
 
         private void btSubmit_Click(object sender, EventArgs e)
         {
+            if (tbName.Text.Contains(' ') || tbName.Text == "")
+            {
+                MessageBox.Show("Name can not contain spaces or null!", "Oops...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             name = tbName.Text;
             rankInput(name);
             this.Close();
@@ -103,7 +108,7 @@ namespace TowerOfHanoi
             }
             catch (FileLoadException)
             {
-                MessageBox.Show("Lỗi file dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Data file have problem!", "Oops...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
