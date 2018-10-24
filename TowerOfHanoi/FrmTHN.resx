@@ -1106,7 +1106,7 @@
     <value>277, 0</value>
   </metadata>
   <data name="rtbLog.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 10.8pt, style=Bold</value>
+    <value>Consolas, 11.25pt</value>
   </data>
   <data name="rtbLog.Location" type="System.Drawing.Point, System.Drawing">
     <value>889, 157</value>

@@ -382,7 +382,7 @@ namespace TowerOfHanoi
                     picTower_Click(picTowerC, new EventArgs());
             }catch(InvalidCastException a)
             {
-                MessageBox.Show("Click chính xác vô bạn ei", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Click chính xác vô bạn ei!", "Oops...", MessageBoxButtons.OK);
             }
         }
 
