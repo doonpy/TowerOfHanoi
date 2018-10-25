@@ -15,6 +15,7 @@ namespace TowerOfHanoi
     {
         public static string name;
         public static int spaceNum = 12;
+        public static string fileName = "data.inb";
         List<Rank> ranks = new List<Rank>();
         public struct Rank
         {
@@ -44,7 +45,6 @@ namespace TowerOfHanoi
         {
             try
             {
-                string fileName = "test.txt";
                 string nameProcessed = name;
                 for (int i = 0; i < spaceNum - name.Length; i++)
                     nameProcessed = nameProcessed + ' ';

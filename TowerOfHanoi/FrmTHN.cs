@@ -151,7 +151,7 @@ namespace TowerOfHanoi
         private void btnRank_Click(object sender, EventArgs e)
         {
             rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========== TOP 10 RANK ==========\n" + "   Tên         Level    Time";
-            System.IO.StreamReader sr = new System.IO.StreamReader("test.txt", true);
+            System.IO.StreamReader sr = new System.IO.StreamReader(frmInputInfo.fileName, true);
             for (int i = 0, j = 1; i < 10; i++)
             {
                 
@@ -359,6 +359,7 @@ namespace TowerOfHanoi
                 MessageBox.Show("You have completed the challenge!\nYou are genuis!", "Congratulation",MessageBoxButtons.OK);
                 frmInputInfo frm = new frmInputInfo();
                 frm.ShowDialog();
+                btnRank_Click(null, null);
             }
             
         }

@@ -16,7 +16,7 @@ namespace TowerOfHanoi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmGiaoDien());
+            Application.Run(new FrmTHN());
         }
     }
 }

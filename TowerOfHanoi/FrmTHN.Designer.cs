@@ -102,7 +102,7 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.BackColor = System.Drawing.Color.Aqua;
+            this.btnPlay.BackColor = System.Drawing.Color.Lime;
             this.btnPlay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             resources.ApplyResources(this.btnPlay, "btnPlay");
             this.btnPlay.ForeColor = System.Drawing.Color.Black;
