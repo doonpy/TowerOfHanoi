@@ -178,7 +178,7 @@
             resources.ApplyResources(this.lblTime, "lblTime");
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTime.ForeColor = System.Drawing.Color.Teal;
+            this.lblTime.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.lblTime.Name = "lblTime";
             // 
             // lblMoveCount
@@ -331,16 +331,19 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Name = "label1";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Name = "label2";
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Name = "label3";
             // 
             // tmrAnimation
@@ -350,7 +353,7 @@
             // 
             // rtbLog
             // 
-            this.rtbLog.BackColor = System.Drawing.Color.Aqua;
+            this.rtbLog.BackColor = System.Drawing.Color.Cyan;
             resources.ApplyResources(this.rtbLog, "rtbLog");
             this.rtbLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rtbLog.Name = "rtbLog";

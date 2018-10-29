@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityData.cs" />
     <EmbeddedResource Include="FrmGiaoDien.resx">
       <DependentUpon>FrmGiaoDien.cs</DependentUpon>
     </EmbeddedResource>

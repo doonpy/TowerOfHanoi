@@ -15,7 +15,7 @@ namespace TowerOfHanoi
     {
         public static string name;
         public static int spaceNum = 12;
-        public static string fileName = "data.inb";
+        public static string fileName = "data.dat";
         List<Rank> ranks = new List<Rank>();
         public struct Rank
         {
@@ -56,18 +56,18 @@ namespace TowerOfHanoi
                     fs.Close();
                 }
                 StreamReader sr = new StreamReader(fileName,true);
-                if (sr.ReadToEnd() == "")
+                if (sr.ReadToEnd() == null)
                 {
                     sr.Close();
                     StreamWriter sw = new StreamWriter(fileName, true);
-                    sw.WriteLine(nameProcessed + ' ' + FrmTHN.level + "       " + FrmTHN.time);
+                    sw.WriteLine(SecurityData.EnCrypt(nameProcessed + ' ' + FrmTHN.level + "       " + FrmTHN.time,SecurityData.key));
                     sw.Close();            
                     return;
                 }
                 sr.Close();
                 StreamReader sr2 = new StreamReader(fileName, true);
                 string str; 
-                while ((str = sr2.ReadLine()) != null)
+                while ((str = SecurityData.DeCrypt(sr2.ReadLine(),SecurityData.key)) != null)
                 {
                     Rank temp = new Rank();
                     temp.name = str.Substring(0, str.IndexOf(' '));
@@ -93,17 +93,15 @@ namespace TowerOfHanoi
                     min = ranks[i];
                     for (int index = i + 1; index < ranks.Count(); index++)
                     {
-                        if (min.lv == ranks[index].lv && min.time > ranks[index].time)
-                        {
-                            smallest = index;
-                        }
-                    }
-                    SwapRank(ranks, i, smallest);
+                        if (min.lv == ranks[index].lv && min.time == ranks[index].time)                      
+                            smallest = index;                       
+                        SwapRank(ranks, i, smallest);
+                    }                  
                 }
                 sr2.Close();
                 StreamWriter sw2 = new StreamWriter(fileName);                
                 foreach (Rank rank in ranks)
-                    sw2.WriteLine(rank.name + ' ' + rank.lv + "       " + rank.time);
+                    sw2.WriteLine(SecurityData.EnCrypt(rank.name + ' ' + rank.lv + "       " + rank.time,SecurityData.key));
                 sw2.Close();
             }
             catch (FileLoadException)

@@ -76,7 +76,7 @@ namespace TowerOfHanoi
         {
 
             MessageBox.Show("Luật chơi: \n- Mỗi lần chỉ được di chuyển 1 đĩa trên cùng của cọc. \n- Đĩa nằm trên phải nhỏ hơn đĩa nằm dưới. \n- Trò chơi được hoàn thành khi các đĩa được chuyển hết từ cọc A ---> cọc C.",
-                "Luật chơi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "Rule (VI)", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //  Nội dung
             //  Tiêu đề "Luật chơi" cho hộp loại 
             //  1 Nút ok
@@ -141,6 +141,7 @@ namespace TowerOfHanoi
             {
                 MessageBox.Show("Phải dùng Auto ban đầu bạn ei!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnAuto.Enabled = false;
+                this.Enabled = true;
                 return;
             }
             btnAuto.Enabled = false;
@@ -150,12 +151,12 @@ namespace TowerOfHanoi
 
         private void btnRank_Click(object sender, EventArgs e)
         {
-            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========== TOP 10 RANK ==========\n" + "   Tên         Level    Time";
+            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========== TOP 10 RANK ==========\n" + "   Name         Level    Time";
             System.IO.StreamReader sr = new System.IO.StreamReader(frmInputInfo.fileName, true);
             for (int i = 0, j = 1; i < 10; i++)
             {
                 
-                string s = sr.ReadLine();
+                string s = SecurityData.DeCrypt(sr.ReadLine(),SecurityData.key);
                 if (s == null) return;
                 string temp = s.Substring(0, s.IndexOf(' '));
                 if (Int32.Parse(s.Substring(temp.Length + (frmInputInfo.spaceNum - temp.Length) + 1, 1)) != numUpDownLV.Value)
@@ -167,17 +168,17 @@ namespace TowerOfHanoi
 
         private void btnGiveUp_Click(object sender, EventArgs e)
         {
-
-            tmrCountTime.Stop(); //timer sẽ ngừng đếm
-            tmrAnimation.Enabled = false;
-            nubLevel.Enabled = true;
-            btnGiveUp.Enabled = false;
-            btnPlay.Enabled = true;
-            btnPlay.Text = "PLAY AGAIN";
-
-            MessageBox.Show("Bạn đã thua", "FAIL");
-
-
+            if (MessageBox.Show("Are you sure?", "Give up", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                tmrCountTime.Stop(); //timer sẽ ngừng đếm
+                tmrAnimation.Enabled = false;
+                nubLevel.Enabled = true;
+                btnGiveUp.Enabled = false;
+                btnPlay.Enabled = true;
+                btnPlay.Text = "PLAY AGAIN";
+                MessageBox.Show("You lose :P", "FAIL");
+            }
+            else return;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -351,7 +352,7 @@ namespace TowerOfHanoi
             rtbLog.Text = rtbLog.Text + Environment.NewLine + moveCount + ". " + towerA + " --> " + towerB; //thêm vào log
             if (DisksRodC.Count == nubLevel.Value) //Nếu đã di chuyển hết các đĩa qua cọc C rồi
             {                                      //Gọi tập đĩa của cọc C lấy ra count nếu = số lượng đã chọn ở Numeric -> xử lí
-                //btnGiveUp.PerformClick(); 
+                //bxtnGiveUp.PerformClick(); 
                 tmrCountTime.Stop();
                 nubLevel.Enabled = true;
                 btnGiveUp.Enabled = false;
@@ -359,7 +360,8 @@ namespace TowerOfHanoi
                 MessageBox.Show("You have completed the challenge!\nYou are genuis!", "Congratulation",MessageBoxButtons.OK);
                 frmInputInfo frm = new frmInputInfo();
                 frm.ShowDialog();
-                btnRank_Click(null, null);
+                numUpDownLV.Value = nubLevel.Value;
+                //btnRank_Click(null, null);
             }
             
         }

@@ -171,7 +171,7 @@
     <value>55, 25</value>
   </data>
   <data name="btnRule.Text" xml:space="preserve">
-    <value>Rules</value>
+    <value>Rule</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 52</value>
@@ -243,7 +243,7 @@
     <value>Century Gothic, 48pt, style=Bold</value>
   </data>
   <data name="lblTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1173, 53</value>
+    <value>1184, 49</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -1166,7 +1166,7 @@
     <value>Consolas, 11.25pt</value>
   </data>
   <data name="rtbLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1185, 193</value>
+    <value>1171, 193</value>
   </data>
   <data name="rtbLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -1199,7 +1199,7 @@
     <value>NoControl</value>
   </data>
   <data name="numUpDownLV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1503, 150</value>
+    <value>1487, 149</value>
   </data>
   <data name="numUpDownLV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -1232,7 +1232,7 @@
     <value>Century Gothic, 14.25pt, style=Bold</value>
   </data>
   <data name="btnRank.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1360, 150</value>
+    <value>1344, 149</value>
   </data>
   <data name="btnRank.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
