@@ -75,7 +75,7 @@ namespace TowerOfHanoi
         private void btnRule_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Luật chơi: \n- Mỗi lần chỉ được di chuyển 1 đĩa trên cùng của cọc. \n- Đĩa nằm trên phải nhỏ hơn đĩa nằm dưới. \n- Trò chơi được hoàn thành khi các đĩa được chuyển hết từ cọc A ---> cọc C.",
+            MessageBox.Show("Rule: \n- You can move only ONE disk on the top of tower. \n- The top disk must SMALLER than the disk under. \n- You will win when all the disks are transferred from tower A to tower B.",
                 "Rule (VI)", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //  Nội dung
             //  Tiêu đề "Luật chơi" cho hộp loại 
