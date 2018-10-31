@@ -56,12 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmGiaoDien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGiaoDien.Designer.cs">
-      <DependentUpon>FrmGiaoDien.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTHN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,9 +71,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityData.cs" />
-    <EmbeddedResource Include="FrmGiaoDien.resx">
-      <DependentUpon>FrmGiaoDien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTHN.aa-DJ.resx">
       <DependentUpon>FrmTHN.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +90,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="cdTOH.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

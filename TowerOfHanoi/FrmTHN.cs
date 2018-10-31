@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Security.Cryptography;
 
 namespace TowerOfHanoi
 {
@@ -66,7 +67,7 @@ namespace TowerOfHanoi
 
         private void FrmTHN_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn thoát", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
 
                 e.Cancel = true;
 
@@ -156,7 +157,7 @@ namespace TowerOfHanoi
             for (int i = 0, j = 1; i < 11; i++)
             {
                 
-                string s = SecurityData.DeCrypt(sr.ReadLine(),SecurityData.key);
+                string s = DeCrypt(sr.ReadLine(),key);
                 if (s == null) return;
                 string temp = s.Substring(0, s.IndexOf(' '));
                 if (Int32.Parse(s.Substring(temp.Length + (frmInputInfo.spaceNum - temp.Length) + 1, 1)) != numUpDownLV.Value)
@@ -397,6 +398,48 @@ namespace TowerOfHanoi
             {
                 Application.DoEvents();
             }
+        }
+
+        public static string key = "test";
+        //http://diendan.congdongcviet.com/threads/t35496::ma-hoa-password-trong-csharp-nhu-the-nao.cpp
+        public static string EnCrypt(string strEnCrypt, string key)
+        {
+            try
+            {
+                byte[] keyArr;
+                byte[] EnCryptArr = UTF8Encoding.UTF8.GetBytes(strEnCrypt);
+                MD5CryptoServiceProvider MD5Hash = new MD5CryptoServiceProvider();
+                keyArr = MD5Hash.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
+                tripDes.Key = keyArr;
+                tripDes.Mode = CipherMode.ECB;
+                tripDes.Padding = PaddingMode.PKCS7;
+                ICryptoTransform transform = tripDes.CreateEncryptor();
+                byte[] arrResult = transform.TransformFinalBlock(EnCryptArr, 0, EnCryptArr.Length);
+                return Convert.ToBase64String(arrResult, 0, arrResult.Length);
+            }
+            catch (Exception) { }
+            return null;
+        }
+
+        public static string DeCrypt(string strDecypt, string key)
+        {
+            try
+            {
+                byte[] keyArr;
+                byte[] DeCryptArr = Convert.FromBase64String(strDecypt);
+                MD5CryptoServiceProvider MD5Hash = new MD5CryptoServiceProvider();
+                keyArr = MD5Hash.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
+                tripDes.Key = keyArr;
+                tripDes.Mode = CipherMode.ECB;
+                tripDes.Padding = PaddingMode.PKCS7;
+                ICryptoTransform transform = tripDes.CreateDecryptor();
+                byte[] arrResult = transform.TransformFinalBlock(DeCryptArr, 0, DeCryptArr.Length);
+                return UTF8Encoding.UTF8.GetString(arrResult);
+            }
+            catch (Exception) { }
+            return null;
         }
     }
 }

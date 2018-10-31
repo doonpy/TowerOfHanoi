@@ -120,6 +120,9 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="toolStrip1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStrip1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -236,6 +239,9 @@
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <metadata name="lblTime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -273,6 +279,9 @@
   <data name="&gt;&gt;lblTime.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <metadata name="lblMoveCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblMoveCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -306,6 +315,9 @@
   <data name="&gt;&gt;lblMoveCount.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <metadata name="nubLevel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="nubLevel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 15.75pt</value>
   </data>
@@ -339,6 +351,9 @@
   <data name="&gt;&gt;nubLevel.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <metadata name="label6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -374,6 +389,9 @@
   </data>
   <metadata name="tmrCountTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
+  </metadata>
+  <metadata name="pic3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <data name="pic3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -412,6 +430,9 @@
   <data name="&gt;&gt;pic3.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="pic4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGoAAAAeCAIAAABL8BwXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -450,6 +471,9 @@
   <data name="&gt;&gt;pic4.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <metadata name="pic5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHwAAAAeCAIAAABhQO24AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -488,6 +512,9 @@
   <data name="&gt;&gt;pic5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="pic6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI4AAAAeCAIAAAB1+bEcAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -526,6 +553,9 @@
   <data name="&gt;&gt;pic6.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="pic7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKAAAAAeCAIAAAAkbYJ/AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -564,6 +594,9 @@
   <data name="&gt;&gt;pic7.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="pic8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALUAAAAeCAIAAADl6sjTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -602,6 +635,9 @@
   <data name="&gt;&gt;pic8.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="pic2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAAAeCAIAAAAAWM/6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -639,6 +675,9 @@
   <data name="&gt;&gt;pic2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="pic1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pic1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD4AAAAeCAIAAAD7DzolAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -676,6 +715,9 @@
   <data name="&gt;&gt;pic1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="picTowerC.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="picTowerC.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAAEsCAYAAACG+vy+AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -793,6 +835,9 @@
   <data name="&gt;&gt;picTowerC.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <metadata name="picTowerB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="picTowerB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAAEsCAYAAACG+vy+AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -910,6 +955,9 @@
   <data name="&gt;&gt;picTowerB.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <metadata name="picTowerA.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="picTowerA.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAAEsCAYAAACG+vy+AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -1000,6 +1048,9 @@
         Zkzy+Xx/ARbU+1K3tI8DAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="picTowerA.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="picTowerA.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 193</value>
   </data>
@@ -1027,6 +1078,9 @@
   <data name="&gt;&gt;picTowerA.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
+  <metadata name="lblLeast.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblLeast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1060,6 +1114,9 @@
   <data name="&gt;&gt;lblLeast.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1093,6 +1150,9 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1126,6 +1186,9 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1162,6 +1225,9 @@
   <metadata name="tmrAnimation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>277, 0</value>
   </metadata>
+  <metadata name="rtbLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="rtbLog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Consolas, 11.25pt</value>
   </data>
@@ -1192,6 +1258,9 @@
   <data name="&gt;&gt;rtbLog.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <metadata name="numUpDownLV.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="numUpDownLV.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 15.75pt</value>
   </data>
@@ -1225,6 +1294,9 @@
   <data name="&gt;&gt;numUpDownLV.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <metadata name="btnRank.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnRank.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -3367,6 +3439,9 @@
         ZTpjcmVhdGUAMjAxNS0wNC0yM1QwMTo0MjowNS0wNTowMP9px2oAAAAldEVYdGRhdGU6bW9kaWZ5ADIw
         MTMtMDItMTRUMDA6NDQ6NTEtMDY6MDCx6KHvAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
