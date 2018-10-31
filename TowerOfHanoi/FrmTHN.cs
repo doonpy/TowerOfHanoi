@@ -139,7 +139,7 @@ namespace TowerOfHanoi
             this.Enabled = false;
             if(rtbLog.Text != "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========")
             {
-                MessageBox.Show("Phải dùng Auto ban đầu bạn ei!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Auto only run when move = 0!", "Opps...",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnAuto.Enabled = false;
                 this.Enabled = true;
                 return;
@@ -153,7 +153,7 @@ namespace TowerOfHanoi
         {
             rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========== TOP 10 RANK ==========\n" + "   Name         Level    Time";
             System.IO.StreamReader sr = new System.IO.StreamReader(frmInputInfo.fileName, true);
-            for (int i = 0, j = 1; i < 10; i++)
+            for (int i = 0, j = 1; i < 11; i++)
             {
                 
                 string s = SecurityData.DeCrypt(sr.ReadLine(),SecurityData.key);
@@ -361,7 +361,7 @@ namespace TowerOfHanoi
                 frmInputInfo frm = new frmInputInfo();
                 frm.ShowDialog();
                 numUpDownLV.Value = nubLevel.Value;
-                //btnRank_Click(null, null);
+                btnAuto.Enabled = false;
             }
             
         }
@@ -385,7 +385,7 @@ namespace TowerOfHanoi
                     picTower_Click(picTowerC, new EventArgs());
             }catch(InvalidCastException a)
             {
-                MessageBox.Show("Click chính xác vô bạn ei!", "Oops...", MessageBoxButtons.OK);
+               // MessageBox.Show("", "Oops...", MessageBoxButtons.OK);
             }
         }
 
