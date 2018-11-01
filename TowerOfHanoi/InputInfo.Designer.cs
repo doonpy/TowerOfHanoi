@@ -39,10 +39,10 @@
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbName.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.ForeColor = System.Drawing.Color.Purple;
-            this.tbName.Location = new System.Drawing.Point(45, 98);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Location = new System.Drawing.Point(56, 122);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(228, 34);
+            this.tbName.Size = new System.Drawing.Size(285, 42);
             this.tbName.TabIndex = 0;
             // 
             // label1
@@ -51,10 +51,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(11, 9);
+            this.label1.Location = new System.Drawing.Point(14, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(394, 36);
+            this.label1.Size = new System.Drawing.Size(495, 44);
             this.label1.TabIndex = 1;
             this.label1.Text = "What\'s your name, genius?";
             // 
@@ -64,10 +64,10 @@
             this.btSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSubmit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSubmit.ForeColor = System.Drawing.Color.Purple;
-            this.btSubmit.Location = new System.Drawing.Point(307, 98);
-            this.btSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSubmit.Location = new System.Drawing.Point(384, 122);
+            this.btSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btSubmit.Name = "btSubmit";
-            this.btSubmit.Size = new System.Drawing.Size(111, 34);
+            this.btSubmit.Size = new System.Drawing.Size(139, 42);
             this.btSubmit.TabIndex = 2;
             this.btSubmit.Text = "Submit";
             this.btSubmit.UseVisualStyleBackColor = false;
@@ -75,15 +75,15 @@
             // 
             // frmInputInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(464, 171);
+            this.ClientSize = new System.Drawing.Size(580, 214);
             this.Controls.Add(this.btSubmit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmInputInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông báo";

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-using System.Security.Cryptography;
+
 
 namespace TowerOfHanoi
 {
@@ -16,7 +16,7 @@ namespace TowerOfHanoi
     {
         PictureBox FirstTopDisk;
         Point d;
-        string towerA, towerB;
+        string tower1, tower2;
         public static TimeSpan time; // Thành phần dùng cho đồng hồ
                        //Một đối tượng TimeSpan đại diện cho một khoảng thời gian (khoảng thời gian hoặc thời gian trôi qua)
                        //được đo là số ngày, giờ, phút, giây và phân số của một giây hoặc số dương.
@@ -97,30 +97,32 @@ namespace TowerOfHanoi
         private void tmrAnimation_Tick(object sender, EventArgs e)
         {
             int step = 19;
-            if (FirstTopDisk.Location.Y < d.Y)
+            int y = 100;
+            if (FirstTopDisk.Location.Y > y && FirstTopDisk.Location.X != d.X) //đi lên
             {
-                FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, d.Y - (d.Y - FirstTopDisk.Location.Y - step));
-                if(Math.Abs(FirstTopDisk.Location.Y-d.Y)<10)
-                    FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, d.Y);
+                FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, y - (y - FirstTopDisk.Location.Y + step));
+                if (Math.Abs(FirstTopDisk.Location.Y - y) < 10)
+                    FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, y);
             }
-            if (FirstTopDisk.Location.X < d.X)
+            if (FirstTopDisk.Location.Y < d.Y && FirstTopDisk.Location.X == d.X) //đi xuống
             {
-                FirstTopDisk.Location = new Point(d.X - (d.X - FirstTopDisk.Location.X - step), FirstTopDisk.Location.Y);
-                if (Math.Abs(FirstTopDisk.Location.X - d.X) < 10)
-                    FirstTopDisk.Location = new Point(d.X, FirstTopDisk.Location.Y);
-            }
-            if (FirstTopDisk.Location.Y > d.Y)
-            {
-                FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, d.Y - (d.Y - FirstTopDisk.Location.Y + step));
+                FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, y - (y - FirstTopDisk.Location.Y - step));
                 if (Math.Abs(FirstTopDisk.Location.Y - d.Y) < 10)
                     FirstTopDisk.Location = new Point(FirstTopDisk.Location.X, d.Y);
             }
-            if (FirstTopDisk.Location.X > d.X)
+            if(FirstTopDisk.Location.X < d.X && FirstTopDisk.Location.Y == y) //đi phải
+            {
+                FirstTopDisk.Location = new Point(d.X - (d.X - FirstTopDisk.Location.X - step), FirstTopDisk.Location.Y);
+                    if (Math.Abs(FirstTopDisk.Location.X - d.X) < 10)
+                        FirstTopDisk.Location = new Point(d.X, FirstTopDisk.Location.Y);
+            }
+            if(FirstTopDisk.Location.X > d.X && FirstTopDisk.Location.Y == y) //đi trái
             {
                 FirstTopDisk.Location = new Point(d.X - (d.X - FirstTopDisk.Location.X + step), FirstTopDisk.Location.Y);
-                if (Math.Abs(FirstTopDisk.Location.X - d.X) < 10)
-                    FirstTopDisk.Location = new Point(d.X, FirstTopDisk.Location.Y);
+                    if (Math.Abs(FirstTopDisk.Location.X - d.X) < 10)
+                        FirstTopDisk.Location = new Point(d.X, FirstTopDisk.Location.Y);
             }
+            //if (FirstTopDisk.Location == d) tmrAnimation.Stop();       
         }
 
         private void AutoSolve(int n, PictureBox src, PictureBox aux, PictureBox des)
@@ -138,7 +140,7 @@ namespace TowerOfHanoi
         private void btnAuto_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            if(rtbLog.Text != "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========")
+            if(moveCount > 0)
             {
                 MessageBox.Show("Auto only run when move = 0!", "Opps...",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnAuto.Enabled = false;
@@ -152,18 +154,18 @@ namespace TowerOfHanoi
 
         private void btnRank_Click(object sender, EventArgs e)
         {
-            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========== TOP 10 RANK ==========\n" + "   Name         Level    Time";
+            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" +"========= TOP 10 RANK =========\n" + "   Name         Level    Time";
             System.IO.StreamReader sr = new System.IO.StreamReader(frmInputInfo.fileName, true);
-            for (int i = 0, j = 1; i < 11; i++)
+            int i = 1;
+            while(!sr.EndOfStream && i < 11)
             {
-                
-                string s = DeCrypt(sr.ReadLine(),key);
-                if (s == null) return;
+                string s = frmInputInfo.DeCrypt(sr.ReadLine(), frmInputInfo.key);
+                if (s == null) continue;
                 string temp = s.Substring(0, s.IndexOf(' '));
                 if (Int32.Parse(s.Substring(temp.Length + (frmInputInfo.spaceNum - temp.Length) + 1, 1)) != numUpDownLV.Value)
                     continue;
-                rtbLog.Text = rtbLog.Text + Environment.NewLine+ j + ". " + s;
-                j++;
+                rtbLog.Text = rtbLog.Text + Environment.NewLine+ i + ". " + s;
+                i++;
             }
         }
 
@@ -191,7 +193,7 @@ namespace TowerOfHanoi
             tmrAnimation.Enabled = false;
             btnAuto.Enabled = true;
             rtbLog.Text =
-            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" + "========== MOVE DETAIL ==========";
+            rtbLog.Text = "Project 1 - Poon & Thanh Tuan\n" + "========= MOVE DETAIL =========";
             foreach (PictureBox disk in disks)
             {
 
@@ -286,7 +288,7 @@ namespace TowerOfHanoi
 
                 //Khi nào cọc nhấn vào có đĩa thì nó mới đánh dấu đó là cái cọc hợp lệ và đánh dấu FirstClickedDisks
                 FirstClickedDisks = DisksOfClickedTower;// Cập nhật cái tập đĩa được đầu tiên = tập những cái đĩa được nhấn 
-                towerA = ClickedTower.Name.ToString() == "picTowerA" ? "Tower A" : ClickedTower.ToString() == "picTowerB" ? "Tower B" : "Tower C";
+                tower1 = ClickedTower.Name.ToString() == "picTowerA" ? "Tower A" : ClickedTower.ToString() == "picTowerB" ? "Tower B" : "Tower C"; //
                 ClickedTower.BorderStyle = BorderStyle.FixedSingle;//Có đường biên để biết cọc nào được nhấn
             }
 
@@ -301,7 +303,7 @@ namespace TowerOfHanoi
 
                 }
                 SecondClickedDisks = DisksOfClickedTower;//Đánh dấu những cái đĩa được nhấn lần 2 = tập những cái đĩa được nhấn 
-                towerB = ClickedTower.Name.ToString() == "picTowerA" ? "Tower A" : ClickedTower.ToString() == "picTowerB" ? "Tower B" : "Tower C";
+                tower2 = ClickedTower.Name.ToString() == "picTowerA" ? "Tower A" : ClickedTower.ToString() == "picTowerB" ? "Tower B" : "Tower C";
                 ProcessMovingDisk(ClickedTower);//Tách ra 1 phương thức xử lí -> Xử lí di chuyển đĩa ntn khi đã được đánh dấu 2 tập đĩa 
             }
 
@@ -339,10 +341,10 @@ namespace TowerOfHanoi
             FirstTopDisk = FirstClickedDisks.Pop();//Đầu tiên phải xoá đĩa đầu tiên của cọc được chọn (Phương thức pop -> xoá đĩa đầu và trả lại đĩa đó)    
             d = point;
             tmrAnimation.Start();
-            if (FirstTopDisk.Location == d)     //Cập nhật toạ độ của đĩa được lấy
-            {
-                tmrAnimation.Stop();            
-            }
+            //if (FirstTopDisk.Location == d)     //Cập nhật toạ độ của đĩa được lấy
+            //{
+            //    tmrAnimation.Stop();            
+            //}
 
             SecondClickedDisks.Push(FirstTopDisk);//Bỏ đĩa được chọn lên đầu của tập ở lần chọn thứ 2
 
@@ -350,7 +352,7 @@ namespace TowerOfHanoi
             lblMoveCount.Text = string.Format("Move: {0}", moveCount);//Và cập nhật lại label movecount ,bỏ movecount vô
             FirstClickedDisks = SecondClickedDisks = null;//reset 2 tập đĩa được nhấn 
             picTowerA.BorderStyle = picTowerB.BorderStyle = picTowerC.BorderStyle = BorderStyle.None;//Vì k biết đường biên của lần chọn là cọc nào nên tắt cả 3 cọc          
-            rtbLog.Text = rtbLog.Text + Environment.NewLine + moveCount + ". " + towerA + " --> " + towerB; //thêm vào log
+            rtbLog.Text = rtbLog.Text + Environment.NewLine + moveCount + ". " + tower1 + " --> " + tower2; //thêm vào log
             if (DisksRodC.Count == nubLevel.Value) //Nếu đã di chuyển hết các đĩa qua cọc C rồi
             {                                      //Gọi tập đĩa của cọc C lấy ra count nếu = số lượng đã chọn ở Numeric -> xử lí
                 //bxtnGiveUp.PerformClick(); 
@@ -390,56 +392,14 @@ namespace TowerOfHanoi
             }
         }
 
-        private void WaitNSeconds(int segundos)         //đợi :3
+        private void WaitNSeconds(int seconds)         //đợi :3
         {
-            if (segundos < 1) return;
-            DateTime _desired = DateTime.Now.AddSeconds(segundos);
-            while (DateTime.Now < _desired)
+            if (seconds < 1) return;
+            DateTime desired = DateTime.Now.AddSeconds(seconds);
+            while (DateTime.Now < desired)
             {
                 Application.DoEvents();
             }
-        }
-
-        public static string key = "test";
-        //http://diendan.congdongcviet.com/threads/t35496::ma-hoa-password-trong-csharp-nhu-the-nao.cpp
-        public static string EnCrypt(string strEnCrypt, string key)
-        {
-            try
-            {
-                byte[] keyArr;
-                byte[] EnCryptArr = UTF8Encoding.UTF8.GetBytes(strEnCrypt);
-                MD5CryptoServiceProvider MD5Hash = new MD5CryptoServiceProvider();
-                keyArr = MD5Hash.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-                TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
-                tripDes.Key = keyArr;
-                tripDes.Mode = CipherMode.ECB;
-                tripDes.Padding = PaddingMode.PKCS7;
-                ICryptoTransform transform = tripDes.CreateEncryptor();
-                byte[] arrResult = transform.TransformFinalBlock(EnCryptArr, 0, EnCryptArr.Length);
-                return Convert.ToBase64String(arrResult, 0, arrResult.Length);
-            }
-            catch (Exception) { }
-            return null;
-        }
-
-        public static string DeCrypt(string strDecypt, string key)
-        {
-            try
-            {
-                byte[] keyArr;
-                byte[] DeCryptArr = Convert.FromBase64String(strDecypt);
-                MD5CryptoServiceProvider MD5Hash = new MD5CryptoServiceProvider();
-                keyArr = MD5Hash.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-                TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
-                tripDes.Key = keyArr;
-                tripDes.Mode = CipherMode.ECB;
-                tripDes.Padding = PaddingMode.PKCS7;
-                ICryptoTransform transform = tripDes.CreateDecryptor();
-                byte[] arrResult = transform.TransformFinalBlock(DeCryptArr, 0, DeCryptArr.Length);
-                return UTF8Encoding.UTF8.GetString(arrResult);
-            }
-            catch (Exception) { }
-            return null;
-        }
+        }        
     }
 }

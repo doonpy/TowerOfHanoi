@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace TowerOfHanoi
 {
@@ -50,58 +51,57 @@ namespace TowerOfHanoi
                     nameProcessed = nameProcessed + ' ';
                 ranks = new List<Rank>();
                 FileStream fs;
-                if (!File.Exists(fileName))
+                if (!File.Exists(fileName)) //nếu file không tồn tại
                 {
-                    fs = new FileStream(fileName, FileMode.Create);
+                    fs = new FileStream(fileName, FileMode.Create); //tạo file mới
                     fs.Close();
                 }
                 StreamReader sr = new StreamReader(fileName,true);
-                if (sr.ReadToEnd() == null)
+                if (sr.ReadToEnd() == null) //file rỗng
                 {
                     sr.Close();
                     StreamWriter sw = new StreamWriter(fileName, true);
-                    sw.WriteLine(SecurityData.EnCrypt(nameProcessed + ' ' + FrmTHN.level + "       " + FrmTHN.time,SecurityData.key));
+                    sw.WriteLine(EnCrypt(nameProcessed + ' ' + FrmTHN.level + "       " + FrmTHN.time,key)); //ghi vô file dòng đầu tiên
                     sw.Close();            
                     return;
                 }
                 sr.Close();
                 StreamReader sr2 = new StreamReader(fileName, true);
                 string str; 
-                while ((str = SecurityData.DeCrypt(sr2.ReadLine(),SecurityData.key)) != null)
+                while ((str = DeCrypt(sr2.ReadLine(),key)) != null) //trong khi chưa đọc hết file
                 {
-                    Rank temp = new Rank();
-                    temp.name = str.Substring(0, str.IndexOf(' '));
-                    for (int i = 0; i < spaceNum - str.Substring(0, str.IndexOf(' ')).Length; i++)
+                    Rank temp = new Rank(); //tạo biến tạm Rank
+                    temp.name = str.Substring(0, str.IndexOf(' ')); //thêm tên
+                    for (int i = 0; i < spaceNum - str.Substring(0, str.IndexOf(' ')).Length; i++) //thêm dấu cách với số lượng = spaceNum - số kí tự của name
                         temp.name = temp.name + ' ';
-                    temp.lv = Int32.Parse(str.Substring(temp.name.Length + 1, 1));
-                    int h = Int32.Parse(str.Substring(str.Length - 8, 2));
-                    int m = Int32.Parse(str.Substring(str.Length - 5, 2));
-                    int s = Int32.Parse(str.Substring(str.Length - 2, 2));
-                    temp.time = temp.time.Add(new TimeSpan(h, m, s));
-                    ranks.Add(temp);
+                    temp.lv = Int32.Parse(str.Substring(temp.name.Length + 1, 1)); //thêm lv
+                    int h = Int32.Parse(str.Substring(str.Length - 8, 2));  //thêm giờ
+                    int m = Int32.Parse(str.Substring(str.Length - 5, 2));  //thêm phút
+                    int s = Int32.Parse(str.Substring(str.Length - 2, 2));  //thêm giây
+                    temp.time = temp.time.Add(new TimeSpan(h, m, s));   //add vào time
+                    ranks.Add(temp);    //add vào ranks 
 
                 }
                 Rank newrank = new Rank();
                 newrank.name = nameProcessed;
                 newrank.lv = FrmTHN.level;
                 newrank.time = FrmTHN.time;
-                ranks.Add(newrank);
-                int smallest = 0;
-                for (int i = 0 ; i < ranks.Count(); i++)
+                ranks.Add(newrank); //thêm rank mới vào ranks
+                for (int i = 0 ; i < ranks.Count(); i++)    //selection sort
                 {   
-                    Rank min = new Rank();
-                    min = ranks[i];
                     for (int index = i + 1; index < ranks.Count(); index++)
                     {
-                        if (min.lv == ranks[index].lv && min.time == ranks[index].time)                      
-                            smallest = index;                       
-                        SwapRank(ranks, i, smallest);
-                    }                  
+                        if (ranks[i].lv == ranks[index].lv && ranks[i].time > ranks[index].time)
+                        {
+                            SwapRank(ranks, i, index);
+                        }
+                    }
+                    
                 }
                 sr2.Close();
                 StreamWriter sw2 = new StreamWriter(fileName);                
-                foreach (Rank rank in ranks)
-                    sw2.WriteLine(SecurityData.EnCrypt(rank.name + ' ' + rank.lv + "       " + rank.time,SecurityData.key));
+                foreach (Rank rank in ranks) //ghi tất cả rank trong ranks sau khi sort xong
+                    sw2.WriteLine(EnCrypt(rank.name + ' ' + rank.lv + "       " + rank.time,key));
                 sw2.Close();
             }
             catch (FileLoadException)
@@ -110,11 +110,54 @@ namespace TowerOfHanoi
             }
         }
 
-        public static void SwapRank(List<Rank> ranks, int positionA, int positionB)
+        public static void SwapRank(List<Rank> ranks, int positionA, int positionB) //swap 2 rank
         {
             Rank temp = ranks[positionA];
             ranks[positionA] = ranks[positionB];
             ranks[positionB] = temp;
+        }
+
+
+        //tham khảo tại http://diendan.congdongcviet.com/threads/t35496::ma-hoa-password-trong-csharp-nhu-the-nao.cpp
+        public static string key = "test"; //khóa của mã hóa và giải mã
+        public static string EnCrypt(string strEnCrypt, string key) //mã hóa sang MD5
+        {
+            try
+            {
+                byte[] keyArr;
+                byte[] EnCryptArr = UTF8Encoding.UTF8.GetBytes(strEnCrypt);
+                MD5CryptoServiceProvider MD5Hash = new MD5CryptoServiceProvider();
+                keyArr = MD5Hash.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
+                tripDes.Key = keyArr;
+                tripDes.Mode = CipherMode.ECB;
+                tripDes.Padding = PaddingMode.PKCS7;
+                ICryptoTransform transform = tripDes.CreateEncryptor();
+                byte[] arrResult = transform.TransformFinalBlock(EnCryptArr, 0, EnCryptArr.Length);
+                return Convert.ToBase64String(arrResult, 0, arrResult.Length);
+            }
+            catch (Exception) { }
+            return null;
+        }
+
+        public static string DeCrypt(string strDecypt, string key) //giải mã
+        {
+            try
+            {
+                byte[] keyArr;
+                byte[] DeCryptArr = Convert.FromBase64String(strDecypt);
+                MD5CryptoServiceProvider MD5Hash = new MD5CryptoServiceProvider();
+                keyArr = MD5Hash.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
+                tripDes.Key = keyArr;
+                tripDes.Mode = CipherMode.ECB;
+                tripDes.Padding = PaddingMode.PKCS7;
+                ICryptoTransform transform = tripDes.CreateDecryptor();
+                byte[] arrResult = transform.TransformFinalBlock(DeCryptArr, 0, DeCryptArr.Length);
+                return UTF8Encoding.UTF8.GetString(arrResult);
+            }
+            catch (Exception) { }
+            return null;
         }
     }
 }
